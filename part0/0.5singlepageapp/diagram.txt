@@ -1,0 +1,36 @@
+title Singe Page Application
+
+note over browser:
+At initial load, browser fetches
+the HTML document required.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML Document [HTML File]
+
+note over browser:
+Links present inside HTML document
+causes the browser to fetch css files.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css [CSS File]
+
+note over browser:
+Then a javascript file named
+"spa.js".
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js [Javascript File]
+
+note over browser:
+Browser executes the javascript code
+and then makes a GET request. It returns
+the notes as "data.json".
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: JSON Data [JSON File]
+
+

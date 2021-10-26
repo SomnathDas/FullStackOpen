@@ -1,0 +1,24 @@
+title New Note (SPA)
+
+note over browser:
+When the button on the form is 
+clicked, the browser will send 
+the user input to the server.
+end note
+
+note over browser:
+Browser makes a POST request
+sending the provided user data 
+as a JSON object.
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server-->browser: responded with code 201 "created"
+
+note over browser:
+Server responded with code 201
+that means "Created" and it didn't
+ask for redirect, staying on the 
+same page and making no 
+other HTTP request.
+end note

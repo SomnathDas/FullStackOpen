@@ -1,0 +1,47 @@
+title New Note Sequence
+
+note over browser:
+When the button on the form is 
+clicked, the browser will send 
+the user input to the server.
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTML-code
+
+note over browser:
+POST request sending
+the user input to the
+server.
+end note
+
+note over browser:
+Server responds with a code of 302
+that means the browser should 
+the browser should redirect to the
+location present inside the response
+header.
+end note
+
+note over browser:
+Location present inside
+the response header was of 
+/notes.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML Document
+
+note over browser:
+This reload also causes 3
+more GET request to get
+css, js and json data.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: Main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: Main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: JSON-data
+
